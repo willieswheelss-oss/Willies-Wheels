@@ -1,152 +1,128 @@
+import logo from "./assets/logo.png";
+
 export default function WilliesWheelsWebsite() {
-  const inventory = [
+  const products = [
     {
-      title: "ATVs",
+      name: '300cc Terminator ATV',
+      price: '$4,500',
       image:
-        "https://images.unsplash.com/photo-1517846693594-1567da72af75?q=80&w=1200&auto=format&fit=crop",
+        'https://images.unsplash.com/photo-1517846693594-1567da72af75?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      title: "Dirt Bikes",
+      name: '125cc Ryder ATV',
+      price: '$1,495',
       image:
-        "https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop",
+        'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      title: "Street Bikes",
+      name: '200cc Sport ATV',
+      price: '$2,695',
       image:
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      title: "Side x Sides",
-      image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
+        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop',
     },
   ];
 
   return (
     <div className="bg-black text-white min-h-screen font-sans">
-      {/* HEADER */}
-      <header className="sticky top-0 z-50 bg-black border-b border-zinc-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <img
-              src="https://i.imgur.com/7xQZQ9Y.png"
-              alt="Willies Wheels Logo"
-              className="w-16 h-16 rounded-full object-cover border border-white"
-            />
+      <header className="flex items-center justify-between px-8 py-5 border-b border-zinc-800 sticky top-0 bg-black/90 backdrop-blur z-50">
+        <h1 className="text-2xl font-bold tracking-wide">
+          WILLIES WHEELS
+        </h1>
 
-            <div>
-              <h1 className="text-2xl font-black tracking-widest uppercase">
-                WILLIES WHEELS
-              </h1>
-
-              <p className="text-zinc-400 text-sm uppercase tracking-[0.3em]">
-                Sales • Parts • Service
-              </p>
-            </div>
-          </div>
-
-          <nav className="hidden md:flex gap-8 uppercase text-sm tracking-widest">
-            <a href="#inventory" className="hover:text-zinc-300 transition">
-              Inventory
-            </a>
-
-            <a href="#about" className="hover:text-zinc-300 transition">
-              About
-            </a>
-
-            <a href="#contact" className="hover:text-zinc-300 transition">
-              Contact
-            </a>
-          </nav>
-        </div>
+        <nav className="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+          <a href="#home">Home</a>
+          <a href="#inventory">Inventory</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </header>
 
-      {/* HERO */}
-      <section className="relative h-[90vh] overflow-hidden flex items-center justify-center text-center">
+      <section
+        id="home"
+        className="relative h-[85vh] flex items-center justify-center text-center overflow-hidden"
+      >
         <img
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1600&auto=format&fit=crop"
           alt="Motorsports"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
 
-        <div className="relative z-10 px-6 max-w-5xl">
-          <h2 className="text-5xl md:text-7xl font-black uppercase leading-tight">
-            Ride More.
-            <span className="block text-zinc-400">Worry Less.</span>
+        <div className="relative z-10 max-w-4xl px-6">
+          <h2 className="text-5xl md:text-7xl font-extrabold leading-tight uppercase">
+            Ride Beyond
+            <span className="block text-zinc-300">Limits</span>
           </h2>
 
-          <p className="mt-6 text-lg text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-            Tampa’s destination for ATVs, dirt bikes, street bikes, side x sides,
-            parts, and service.
+          <p className="mt-6 text-lg text-zinc-300 max-w-2xl mx-auto">
+            ATVs, dirt bikes, scooters, and go-karts. Find the perfect
+            ride for every adventure.
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:bg-zinc-200 transition">
-              Browse Inventory
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <button className="bg-white text-black hover:bg-zinc-200 px-8 py-4 rounded-2xl font-semibold transition shadow-lg">
+              Shop Inventory
             </button>
 
-            <button className="border border-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-black transition">
-              Financing Available
+            <button className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-2xl font-semibold transition">
+              Financing Options
             </button>
           </div>
         </div>
       </section>
 
-      {/* FEATURES */}
-      <section className="bg-zinc-950 py-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          {[
-            "Flexible Financing",
-            "Sales • Parts • Service",
-            "Top Rated Customer Support",
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-white transition"
-            >
-              <h3 className="text-2xl font-bold mb-4">{item}</h3>
-
-              <p className="text-zinc-400 leading-relaxed">
-                Premium powersports inventory with expert support and affordable
-                financing options.
-              </p>
-            </div>
-          ))}
-        </div>
+      <section className="grid md:grid-cols-3 gap-6 px-8 py-20 bg-zinc-950">
+        {[
+          'Top Rated Motorsports Dealer',
+          'Flexible Financing Available',
+          'Sales, Parts & Service',
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="bg-zinc-900 rounded-3xl p-8 border border-zinc-800 hover:border-white transition"
+          >
+            <h3 className="text-2xl font-bold mb-3">{item}</h3>
+            <p className="text-zinc-400 leading-relaxed">
+              Experience premium customer service and unbeatable deals on all
+              motorsport vehicles.
+            </p>
+          </div>
+        ))}
       </section>
 
-      {/* INVENTORY */}
-      <section
-        id="inventory"
-        className="max-w-7xl mx-auto px-6 py-24"
-      >
-        <div className="mb-14 text-center">
-          <h2 className="text-5xl font-black uppercase">
-            Featured Inventory
-          </h2>
+      <section id="inventory" className="px-8 py-24">
+        <div className="flex items-center justify-between mb-12 flex-wrap gap-4">
+          <div>
+            <h2 className="text-4xl font-bold">Featured Inventory</h2>
+            <p className="text-zinc-400 mt-2">
+              Browse our latest ATVs and scooters.
+            </p>
+          </div>
 
-          <p className="text-zinc-400 mt-4 text-lg">
-            Explore our latest motorsports vehicles.
-          </p>
+          <button className="bg-white text-black hover:bg-zinc-200 px-6 py-3 rounded-xl transition font-medium">
+            View All Products
+          </button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {inventory.map((item, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {products.map((product, index) => (
             <div
               key={index}
-              className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:scale-[1.03] transition duration-300"
+              className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:scale-[1.02] transition duration-300"
             >
               <img
-                src={item.image}
-                alt={item.title}
+                src={product.image}
+                alt={product.name}
                 className="h-64 w-full object-cover"
               />
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold">{item.title}</h3>
+                <h3 className="text-2xl font-bold">{product.name}</h3>
+                <p className="text-white text-xl mt-2 font-semibold">
+                  {product.price}
+                </p>
 
-                <button className="mt-5 w-full bg-white text-black py-3 rounded-xl font-semibold hover:bg-zinc-200 transition">
-                  View Inventory
+                <button className="mt-5 w-full bg-white text-black hover:bg-zinc-200 py-3 rounded-xl transition font-medium">
+                  View Details
                 </button>
               </div>
             </div>
@@ -154,74 +130,54 @@ export default function WilliesWheelsWebsite() {
         </div>
       </section>
 
-      {/* ABOUT */}
       <section
         id="about"
-        className="bg-zinc-950 py-24 px-6"
+        className="px-8 py-24 bg-black"
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-black uppercase mb-6">
-            About Willies Wheels
-          </h2>
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">About Willies Wheels</h2>
 
           <p className="text-zinc-300 text-lg leading-relaxed">
-            Willies Wheels is Tampa’s trusted destination for ATVs, dirt bikes,
-            street bikes, side x sides, parts, and professional service. We are
-            committed to helping riders find the perfect machine with affordable
-            pricing and flexible financing.
+            We specialize in high-quality motorsports vehicles including ATVs,
+            dirt bikes, scooters, and go-karts. Our mission is to deliver
+            thrilling rides, unbeatable service, and affordable financing for
+            every customer.
           </p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto bg-white text-black rounded-[2rem] p-14 text-center shadow-2xl">
-          <h2 className="text-5xl font-black uppercase">
+      <section className="px-8 py-24 text-center">
+        <div className="max-w-4xl mx-auto bg-white text-black rounded-[2rem] p-12 shadow-2xl">
+          <h2 className="text-4xl font-extrabold mb-4">
             Ready To Ride?
           </h2>
 
-          <p className="mt-6 text-lg max-w-2xl mx-auto">
-            Contact us today for inventory availability, financing options,
-            parts, and service.
+          <p className="text-lg max-w-2xl mx-auto">
+            Contact us today to learn about inventory, financing, and special
+            promotions.
           </p>
 
-          <button className="mt-8 bg-black text-white px-10 py-4 rounded-2xl font-bold hover:scale-105 transition">
+          <button className="mt-8 bg-black text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">
             Contact Us
           </button>
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer
         id="contact"
-        className="border-t border-zinc-800 py-12 px-6 text-center"
+        className="border-t border-zinc-800 px-8 py-10 text-center text-zinc-400"
       >
-        <img
-          src="https://i.imgur.com/7xQZQ9Y.png"
-          alt="Willies Wheels Logo"
-          className="w-28 h-28 rounded-full mx-auto mb-6 border border-white"
-        />
-
-        <h3 className="text-3xl font-black uppercase tracking-widest">
+        <h3 className="text-2xl font-bold text-white mb-3">
           WILLIES WHEELS
         </h3>
 
-        <p className="mt-4 text-zinc-400">
-          1102 W Waters Ave Tampa, FL 33604
-        </p>
+        <p>1102 W Waters Ave Tampa, FL 33604</p>
+        <p>813-280-2550</p>
+        <p>willieswheelss@gmail.com</p>
+        <p>Mon-Sat 9:00AM-7:00PM</p>
+        <p>Sunday 12:00PM-6:00PM</p>
 
-        <p className="text-zinc-400">813-280-2550</p>
-
-        <p className="text-zinc-400">
-          willieswheelss@gmail.com
-        </p>
-
-        <div className="mt-4 text-zinc-400">
-          <p>Mon-Sat 9:00AM-7:00PM</p>
-          <p>Sunday 12:00PM-6:00PM</p>
-        </div>
-
-        <div className="mt-8 flex justify-center gap-6 uppercase tracking-widest text-sm">
+        <div className="mt-6 flex justify-center gap-6 text-sm uppercase tracking-widest">
           <a href="#">Facebook</a>
           <a href="#">Instagram</a>
           <a href="#">TikTok</a>
@@ -230,3 +186,4 @@ export default function WilliesWheelsWebsite() {
     </div>
   );
 }
+c:\Users\aaamo\OneDrive\Documents\logo.png
