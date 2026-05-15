@@ -25,9 +25,17 @@ export default function WilliesWheelsWebsite() {
   return (
     <div className="bg-black text-white min-h-screen font-sans">
       <header className="flex items-center justify-between px-8 py-5 border-b border-zinc-800 sticky top-0 bg-black/90 backdrop-blur z-50">
-        <h1 className="text-2xl font-bold tracking-wide">
-          WILLIES WHEELS
-        </h1>
+        <div className="flex items-center gap-4">
+          <img
+            src={logo}
+            alt="Willies Wheels Logo"
+            className="h-14 w-auto"
+          />
+
+          <h1 className="text-2xl font-bold tracking-wide">
+            WILLIES WHEELS
+          </h1>
+        </div>
 
         <nav className="hidden md:flex gap-8 text-sm uppercase tracking-widest">
           <a href="#home">Home</a>
@@ -186,4 +194,3 @@ export default function WilliesWheelsWebsite() {
     </div>
   );
 }
-c:\Users\aaamo\OneDrive\Documents\logo.png
